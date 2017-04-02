@@ -5,25 +5,6 @@
 @prefix sht:    <http://www.w3.org/ns/shacl/test-suite#> .
 @prefix sx:     <https://shexspec.github.io/shexTest/ns#> .
 
-# TODO:
-#   1IRI_with_all_punctuationdot
-#   1IRI_with_UCHAR.1dot
-#   1val1STRING_LITERAL1
-#   1val1STRING_LITERAL1_with_all_controls
-#   1val1STRING_LITERAL1_with_all_punctuation
-#   1val1STRING_LITERAL1_with_ascii_boundaries
-#   1val1STRING_LITERAL1_with_UTF8_boundaries
-#   1val1STRING_LITERAL2
-#   1val1STRING_LITERAL2_with_LANGTAG
-#   1val1STRING_LITERAL2_with_subtag
-#   1val1STRING_LITERAL_LONG1
-#   1val1STRING_LITERAL_LONG2
-#   1val1STRING_LITERAL_LONG2_with_LANGTAG
-#   1val1STRING_LITERAL_LONG2_with_subtag
-#
-#   1val1LNDatatype
-
-
 <> a mf:Manifest ;
     rdfs:comment "ShEx representation tests" ;
     mf:entries
@@ -70,6 +51,8 @@
         <#1bnodeRef1>
         <#1dotInline1>
         <#1val1IRIREF>
+        <#1IRI_with_all_punctuationdot>
+        <#1IRI_with_UCHAR.1dot>
         <#1val1INTEGER>
         <#1val1DOUBLE>
         <#1val1DOUBLElowercase>
@@ -77,6 +60,20 @@
         <#1val1IRIREFDatatype>
         <#1val1true>
         <#1val1false>
+        <#1val1LNDatatype>
+        <#1val1STRING_LITERAL1>
+        <#1val1STRING_LITERAL1_with_all_controls>
+        <#1val1STRING_LITERAL1_with_all_punctuation>
+        <#1val1STRING_LITERAL1_with_ECHAR_escapes>
+        <#1val1STRING_LITERAL1_with_ascii_boundaries>
+        <#1val1STRING_LITERAL1_with_UTF8_boundaries>
+        <#1val1STRING_LITERAL2>
+        <#1val1STRING_LITERAL2_with_LANGTAG>
+        <#1val1STRING_LITERAL2_with_subtag>
+        <#1val1STRING_LITERAL_LONG1>
+        <#1val1STRING_LITERAL_LONG2>
+        <#1val1STRING_LITERAL_LONG2_with_LANGTAG>
+        <#1val1STRING_LITERAL_LONG2_with_subtag>
         <#1datatypeLength>
         <#1literalFractiondigits5>
         <#1literalFractiondigits4>
@@ -95,7 +92,6 @@
         <#1integerMininclusiveDOUBLELeadTrail>
         <#1integerMininclusiveDOUBLEint>
         <#1integerMininclusiveDOUBLEintLeadTrail>
-        <#1integerMininclusivexsd-integer>
         <#1decimalMininclusiveINTEGER>
         <#1decimalMininclusiveINTEGERLead>
         <#1decimalMininclusiveDECIMAL>
@@ -104,14 +100,12 @@
         <#1decimalMininclusiveDOUBLE>
         <#1decimalMininclusiveDOUBLELeadTrail>
         <#1decimalMininclusiveDOUBLEintLeadTrail>
-        <#1decimalMininclusivexsd-decimal>
         <#1floatMininclusiveDECIMAL>
         <#1floatMininclusiveDECIMALLeadTrail>
         <#1floatMininclusiveDECIMALintLeadTrail>
         <#1floatMininclusiveDOUBLE>
         <#1floatMininclusiveDOUBLELeadTrail>
         <#1floatMininclusiveDOUBLEintLeadTrail>
-        <#1floatMininclusivexsd-float>
         <#1doubleMininclusiveINTEGERLead>
         <#1doubleMininclusiveDECIMAL>
         <#1doubleMininclusiveDECIMALLeadTrail>
@@ -119,7 +113,6 @@
         <#1doubleMininclusiveDOUBLE>
         <#1doubleMininclusiveDOUBLELeadTrail>
         <#1doubleMininclusiveDOUBLEintLeadTrail>
-        <#1doubleMininclusivexsd-double>
         <#1integerMinexclusiveINTEGER>
         <#1integerMinexclusiveDECIMALint>
         <#1integerMinexclusiveDOUBLEint>
@@ -129,7 +122,6 @@
         <#1floatMinexclusiveINTEGER>
         <#1floatMinexclusiveDECIMAL>
         <#1floatMinexclusiveDOUBLE>
-        <#1floatMinexclusivexsd-float>
         <#1doubleMinexclusiveINTEGER>
         <#1doubleMinexclusiveDECIMAL>
         <#1doubleMinexclusiveDOUBLE>
@@ -142,7 +134,6 @@
         <#1floatMaxinclusiveINTEGER>
         <#1floatMaxinclusiveDECIMAL>
         <#1floatMaxinclusiveDOUBLE>
-        <#1floatMaxinclusivexsd-float>
         <#1doubleMaxinclusiveINTEGER>
         <#1doubleMaxinclusiveDECIMAL>
         <#1doubleMaxinclusiveDOUBLE>
@@ -153,7 +144,6 @@
         <#1decimalMaxexclusiveDECIMAL>
         <#1decimalMaxexclusiveDOUBLE>
         <#1decimalMaxexclusivexsd-byte>
-        <#1decimalMaxexclusivexsd-decimal>
         <#1floatMaxexclusiveINTEGER>
         <#1floatMaxexclusiveDECIMAL>
         <#1floatMaxexclusiveDOUBLE>
@@ -183,6 +173,15 @@
         <#1bnodeMaxlength>
         <#1nonliteralMaxlength>
         <#1literalPattern>
+        <#1literalPattern_with_all_meta>
+        <#1literalPattern_with_all_controls>
+        <#1literalPattern_with_all_punctuation>
+        <#1literalPattern_with_ascii_boundaries>
+        <#1literalPattern_with_UTF8_boundaries>
+        <#1literalPattern_with_REGEXP_escapes>
+        <#1literalPattern_with_REGEXP_escapes_bare>
+        <#1literalPattern_with_REGEXP_escapes_escaped>
+        <#1literalPatterni>
         <#1literalPattern19>
         <#1literalStartPattern>
         <#1literalPatternEnd>
@@ -200,6 +199,22 @@
         <#1val1iriStem>
         <#1val1iriStemMinusiri3>
         <#1val1iriStemMinusiriStem3>
+        <#1val1dotMinusliteral3>
+        <#1val1dotMinusliteralStem3>
+        <#1val1literalStem>
+        <#1val1literalStemMinusliteral3>
+        <#1val1literalStemMinusliteralStem3>
+        <#1val1literaliriStem>
+        <#1val1literaliriStemMinusliteraliri3>
+        <#1val1dotMinuslanguage3>
+        <#1val1dotMinuslanguageStem3>
+        <#1val1languageStem>
+        <#1val1languageStemMinuslanguage3>
+        <#1val1languageStemMinuslanguageStem3>
+        <#1val1literallanguageStem>
+        <#1val1literallanguageStemMinusliterallanguage3>
+        <#1val1literalAtlanguageStem>
+        <#1val1literalAtlanguageStemMinusliteralAtlanguage3>
         <#2dot>
         <#2dotSemis>
         <#open2dotclose>
@@ -298,8 +313,6 @@
         <#NOT1dotOR2dotX3AND1>
         <#shapeExtern>
         <#shapeExternRef>
-#         <#1dotPlusLt1dotPlus>
-        <#2dot>
 #        <#0Inherit1>
 #        <#1dotInherit1>
 #        <#1dotInherit3>
@@ -335,8 +348,12 @@
         <#1Include1-after>
         <#startSelfRefIRIREF>
         <#startSelfRefbnode>
+        <#datatypes>
         <#_all>
         <#kitchenSink>
+        <#node_kind_example>
+        <#dependent_shape>
+        <#recursion_example>
     ) .
 
 <#0> a sht:RepresentationTest ;
@@ -701,6 +718,22 @@
     sx:ttl <1val1IRIREF.ttl> ;
     .
 
+<#1IRI_with_all_punctuationdot> a sht:RepresentationTest ;
+    mf:name "1IRI_with_all_punctuationdot" ;
+    mf:status mf:proposed ;
+    sx:shex <1IRI_with_all_punctuationdot.shex> ;
+    sx:json <1IRI_with_all_punctuationdot.json> ;
+    sx:ttl <1IRI_with_all_punctuationdot.ttl> ;
+    .
+
+<#1IRI_with_UCHAR.1dot> a sht:RepresentationTest ;
+    mf:name "1IRI_with_UCHAR.1dot" ;
+    mf:status mf:proposed ;
+    sx:shex <1IRI_with_UCHAR.1dot.shex> ;
+    sx:json <1IRI_with_UCHAR.1dot.json> ;
+    sx:ttl <1IRI_with_UCHAR.1dot.ttl> ;
+    .
+
 <#1val1INTEGER> a sht:RepresentationTest ;
     mf:name "1val1INTEGER" ;
     mf:status mf:proposed ;
@@ -763,6 +796,118 @@
     sx:shex <1val1false.shex> ;
     sx:json <1val1false.json> ;
     sx:ttl <1val1false.ttl> ;
+    .
+
+<#1val1LNDatatype> a sht:RepresentationTest ;
+    mf:name "1val1LNDatatype" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1LNDatatype.shex> ;
+    sx:json <1val1LNDatatype.json> ;
+    sx:ttl <1val1LNDatatype.ttl> ;
+    .
+
+<#1val1STRING_LITERAL1> a sht:RepresentationTest ;
+    mf:name "1val1STRING_LITERAL1" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1STRING_LITERAL1.shex> ;
+    sx:json <1val1STRING_LITERAL1.json> ;
+    sx:ttl <1val1STRING_LITERAL1.ttl> ;
+    .
+
+<#1val1STRING_LITERAL1_with_all_controls> a sht:RepresentationTest ;
+    mf:name "1val1STRING_LITERAL1_with_all_controls" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1STRING_LITERAL1_with_all_controls.shex> ;
+    sx:json <1val1STRING_LITERAL1_with_all_controls.json> ;
+    sx:ttl <1val1STRING_LITERAL1_with_all_controls.ttl> ;
+    .
+
+<#1val1STRING_LITERAL1_with_all_punctuation> a sht:RepresentationTest ;
+    mf:name "1val1STRING_LITERAL1_with_all_punctuation" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1STRING_LITERAL1_with_all_punctuation.shex> ;
+    sx:json <1val1STRING_LITERAL1_with_all_punctuation.json> ;
+    sx:ttl <1val1STRING_LITERAL1_with_all_punctuation.ttl> ;
+    .
+
+<#1val1STRING_LITERAL1_with_ECHAR_escapes> a sht:RepresentationTest ;
+    mf:name "1val1STRING_LITERAL1_with_ECHAR_escapes" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1STRING_LITERAL1_with_ECHAR_escapes.shex> ;
+    sx:json <1val1STRING_LITERAL1_with_ECHAR_escapes.json> ;
+    sx:ttl <1val1STRING_LITERAL1_with_ECHAR_escapes.ttl> ;
+    .
+
+<#1val1STRING_LITERAL1_with_ascii_boundaries> a sht:RepresentationTest ;
+    mf:name "1val1STRING_LITERAL1_with_ascii_boundaries" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1STRING_LITERAL1_with_ascii_boundaries.shex> ;
+    sx:json <1val1STRING_LITERAL1_with_ascii_boundaries.json> ;
+    sx:ttl <1val1STRING_LITERAL1_with_ascii_boundaries.ttl> ;
+    .
+
+<#1val1STRING_LITERAL1_with_UTF8_boundaries> a sht:RepresentationTest ;
+    mf:name "1val1STRING_LITERAL1_with_UTF8_boundaries" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1STRING_LITERAL1_with_UTF8_boundaries.shex> ;
+    sx:json <1val1STRING_LITERAL1_with_UTF8_boundaries.json> ;
+    sx:ttl <1val1STRING_LITERAL1_with_UTF8_boundaries.ttl> ;
+    .
+
+<#1val1STRING_LITERAL2> a sht:RepresentationTest ;
+    mf:name "1val1STRING_LITERAL2" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1STRING_LITERAL2.shex> ;
+    sx:json <1val1STRING_LITERAL2.json> ;
+    sx:ttl <1val1STRING_LITERAL2.ttl> ;
+    .
+
+<#1val1STRING_LITERAL2_with_LANGTAG> a sht:RepresentationTest ;
+    mf:name "1val1STRING_LITERAL2_with_LANGTAG" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1STRING_LITERAL2_with_LANGTAG.shex> ;
+    sx:json <1val1STRING_LITERAL2_with_LANGTAG.json> ;
+    sx:ttl <1val1STRING_LITERAL2_with_LANGTAG.ttl> ;
+    .
+
+<#1val1STRING_LITERAL2_with_subtag> a sht:RepresentationTest ;
+    mf:name "1val1STRING_LITERAL2_with_subtag" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1STRING_LITERAL2_with_subtag.shex> ;
+    sx:json <1val1STRING_LITERAL2_with_subtag.json> ;
+    sx:ttl <1val1STRING_LITERAL2_with_subtag.ttl> ;
+    .
+
+<#1val1STRING_LITERAL_LONG1> a sht:RepresentationTest ;
+    mf:name "1val1STRING_LITERAL_LONG1" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1STRING_LITERAL_LONG1.shex> ;
+    sx:json <1val1STRING_LITERAL_LONG1.json> ;
+    sx:ttl <1val1STRING_LITERAL_LONG1.ttl> ;
+    .
+
+<#1val1STRING_LITERAL_LONG2> a sht:RepresentationTest ;
+    mf:name "1val1STRING_LITERAL_LONG2" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1STRING_LITERAL_LONG2.shex> ;
+    sx:json <1val1STRING_LITERAL_LONG2.json> ;
+    sx:ttl <1val1STRING_LITERAL_LONG2.ttl> ;
+    .
+
+<#1val1STRING_LITERAL_LONG2_with_LANGTAG> a sht:RepresentationTest ;
+    mf:name "1val1STRING_LITERAL_LONG2_with_LANGTAG" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1STRING_LITERAL_LONG2_with_LANGTAG.shex> ;
+    sx:json <1val1STRING_LITERAL_LONG2_with_LANGTAG.json> ;
+    sx:ttl <1val1STRING_LITERAL_LONG2_with_LANGTAG.ttl> ;
+    .
+
+<#1val1STRING_LITERAL_LONG2_with_subtag> a sht:RepresentationTest ;
+    mf:name "1val1STRING_LITERAL_LONG2_with_subtag" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1STRING_LITERAL_LONG2_with_subtag.shex> ;
+    sx:json <1val1STRING_LITERAL_LONG2_with_subtag.json> ;
+    sx:ttl <1val1STRING_LITERAL_LONG2_with_subtag.ttl> ;
     .
 
 <#1datatypeLength> a sht:RepresentationTest ;
@@ -941,14 +1086,6 @@
     sx:ttl <1integerMininclusiveDOUBLEintLeadTrail.ttl> ;
     .
 
-<#1integerMininclusivexsd-integer> a sht:RepresentationTest ;
-    mf:name "1integerMininclusivexsd-integer" ;
-    mf:status mf:proposed ;
-    sx:shex <1integerMininclusivexsd-integer.shex> ;
-    sx:json <1integerMininclusivexsd-integer.json> ;
-    sx:ttl <1integerMininclusivexsd-integer.ttl> ;
-    .
-
 <#1decimalMininclusiveINTEGER> a sht:RepresentationTest ;
     mf:name "1decimalMininclusiveINTEGER" ;
     mf:status mf:proposed ;
@@ -1013,14 +1150,6 @@
     sx:ttl <1decimalMininclusiveDOUBLEintLeadTrail.ttl> ;
     .
 
-<#1decimalMininclusivexsd-decimal> a sht:RepresentationTest ;
-    mf:name "1decimalMininclusivexsd-decimal" ;
-    mf:status mf:proposed ;
-    sx:shex <1decimalMininclusivexsd-decimal.shex> ;
-    sx:json <1decimalMininclusivexsd-decimal.json> ;
-    sx:ttl <1decimalMininclusivexsd-decimal.ttl> ;
-    .
-
 <#1floatMininclusiveDECIMAL> a sht:RepresentationTest ;
     mf:name "1floatMininclusiveDECIMAL" ;
     mf:status mf:proposed ;
@@ -1067,14 +1196,6 @@
     sx:shex <1floatMininclusiveDOUBLEintLeadTrail.shex> ;
     sx:json <1floatMininclusiveDOUBLEintLeadTrail.json> ;
     sx:ttl <1floatMininclusiveDOUBLEintLeadTrail.ttl> ;
-    .
-
-<#1floatMininclusivexsd-float> a sht:RepresentationTest ;
-    mf:name "1floatMininclusivexsd-float" ;
-    mf:status mf:proposed ;
-    sx:shex <1floatMininclusivexsd-float.shex> ;
-    sx:json <1floatMininclusivexsd-float.json> ;
-    sx:ttl <1floatMininclusivexsd-float.ttl> ;
     .
 
 <#1doubleMininclusiveINTEGERLead> a sht:RepresentationTest ;
@@ -1131,14 +1252,6 @@
     sx:shex <1doubleMininclusiveDOUBLEintLeadTrail.shex> ;
     sx:json <1doubleMininclusiveDOUBLEintLeadTrail.json> ;
     sx:ttl <1doubleMininclusiveDOUBLEintLeadTrail.ttl> ;
-    .
-
-<#1doubleMininclusivexsd-double> a sht:RepresentationTest ;
-    mf:name "1doubleMininclusivexsd-double" ;
-    mf:status mf:proposed ;
-    sx:shex <1doubleMininclusivexsd-double.shex> ;
-    sx:json <1doubleMininclusivexsd-double.json> ;
-    sx:ttl <1doubleMininclusivexsd-double.ttl> ;
     .
 
 <#1integerMinexclusiveINTEGER> a sht:RepresentationTest ;
@@ -1211,14 +1324,6 @@
     sx:shex <1floatMinexclusiveDOUBLE.shex> ;
     sx:json <1floatMinexclusiveDOUBLE.json> ;
     sx:ttl <1floatMinexclusiveDOUBLE.ttl> ;
-    .
-
-<#1floatMinexclusivexsd-float> a sht:RepresentationTest ;
-    mf:name "1floatMinexclusivexsd-float" ;
-    mf:status mf:proposed ;
-    sx:shex <1floatMinexclusivexsd-float.shex> ;
-    sx:json <1floatMinexclusivexsd-float.json> ;
-    sx:ttl <1floatMinexclusivexsd-float.ttl> ;
     .
 
 <#1doubleMinexclusiveINTEGER> a sht:RepresentationTest ;
@@ -1317,14 +1422,6 @@
     sx:ttl <1floatMaxinclusiveDOUBLE.ttl> ;
     .
 
-<#1floatMaxinclusivexsd-float> a sht:RepresentationTest ;
-    mf:name "1floatMaxinclusivexsd-float" ;
-    mf:status mf:proposed ;
-    sx:shex <1floatMaxinclusivexsd-float.shex> ;
-    sx:json <1floatMaxinclusivexsd-float.json> ;
-    sx:ttl <1floatMaxinclusivexsd-float.ttl> ;
-    .
-
 <#1doubleMaxinclusiveINTEGER> a sht:RepresentationTest ;
     mf:name "1doubleMaxinclusiveINTEGER" ;
     mf:status mf:proposed ;
@@ -1403,14 +1500,6 @@
     sx:shex <1decimalMaxexclusivexsd-byte.shex> ;
     sx:json <1decimalMaxexclusivexsd-byte.json> ;
     sx:ttl <1decimalMaxexclusivexsd-byte.ttl> ;
-    .
-
-<#1decimalMaxexclusivexsd-decimal> a sht:RepresentationTest ;
-    mf:name "1decimalMaxexclusivexsd-decimal" ;
-    mf:status mf:proposed ;
-    sx:shex <1decimalMaxexclusivexsd-decimal.shex> ;
-    sx:json <1decimalMaxexclusivexsd-decimal.json> ;
-    sx:ttl <1decimalMaxexclusivexsd-decimal.ttl> ;
     .
 
 <#1floatMaxexclusiveINTEGER> a sht:RepresentationTest ;
@@ -1645,6 +1734,78 @@
     sx:ttl <1literalPattern.ttl> ;
     .
 
+<#1literalPattern_with_all_meta> a sht:RepresentationTest ;
+    mf:name "1literalPattern_with_all_meta" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalPattern_with_all_meta.shex> ;
+    sx:json <1literalPattern_with_all_meta.json> ;
+    sx:ttl <1literalPattern_with_all_meta.ttl> ;
+    .
+
+<#1literalPattern_with_all_controls> a sht:RepresentationTest ;
+    mf:name "1literalPattern_with_all_controls" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalPattern_with_all_controls.shex> ;
+    sx:json <1literalPattern_with_all_controls.json> ;
+    sx:ttl <1literalPattern_with_all_controls.ttl> ;
+    .
+
+<#1literalPattern_with_all_punctuation> a sht:RepresentationTest ;
+    mf:name "1literalPattern_with_all_punctuation" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalPattern_with_all_punctuation.shex> ;
+    sx:json <1literalPattern_with_all_punctuation.json> ;
+    sx:ttl <1literalPattern_with_all_punctuation.ttl> ;
+    .
+
+<#1literalPattern_with_ascii_boundaries> a sht:RepresentationTest ;
+    mf:name "1literalPattern_with_ascii_boundaries" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalPattern_with_ascii_boundaries.shex> ;
+    sx:json <1literalPattern_with_ascii_boundaries.json> ;
+    sx:ttl <1literalPattern_with_ascii_boundaries.ttl> ;
+    .
+
+<#1literalPattern_with_UTF8_boundaries> a sht:RepresentationTest ;
+    mf:name "1literalPattern_with_UTF8_boundaries" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalPattern_with_UTF8_boundaries.shex> ;
+    sx:json <1literalPattern_with_UTF8_boundaries.json> ;
+    sx:ttl <1literalPattern_with_UTF8_boundaries.ttl> ;
+    .
+
+<#1literalPattern_with_REGEXP_escapes> a sht:RepresentationTest ;
+    mf:name "1literalPattern_with_REGEXP_escapes" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalPattern_with_REGEXP_escapes.shex> ;
+    sx:json <1literalPattern_with_REGEXP_escapes.json> ;
+    sx:ttl <1literalPattern_with_REGEXP_escapes.ttl> ;
+    .
+
+<#1literalPattern_with_REGEXP_escapes_bare> a sht:RepresentationTest ;
+    mf:name "1literalPattern_with_REGEXP_escapes_bare" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalPattern_with_REGEXP_escapes_bare.shex> ;
+    sx:json <1literalPattern_with_REGEXP_escapes_bare.json> ;
+    sx:ttl <1literalPattern_with_REGEXP_escapes_bare.ttl> ;
+    .
+
+<#1literalPattern_with_REGEXP_escapes_escaped> a sht:RepresentationTest ;
+    mf:name "1literalPattern_with_REGEXP_escapes_escaped" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalPattern_with_REGEXP_escapes_escaped.shex> ;
+    sx:json <1literalPattern_with_REGEXP_escapes_escaped.json> ;
+    sx:ttl <1literalPattern_with_REGEXP_escapes_escaped.ttl> ;
+    .
+
+<#1literalPatterni> a sht:RepresentationTest ;
+    mf:name "1literalPatterni" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalPatterni.shex> ;
+    sx:json <1literalPatterni.json> ;
+    sx:ttl <1literalPatterni.ttl> ;
+    .
+
 <#1literalPattern19> a sht:RepresentationTest ;
     mf:name "1literalPattern19" ;
     mf:status mf:proposed ;
@@ -1779,6 +1940,134 @@
     sx:shex <1val1iriStemMinusiriStem3.shex> ;
     sx:json <1val1iriStemMinusiriStem3.json> ;
     sx:ttl <1val1iriStemMinusiriStem3.ttl> ;
+    .
+
+<#1val1dotMinusliteral3> a sht:RepresentationTest ;
+    mf:name "1val1dotMinusliteral3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1dotMinusliteral3.shex> ;
+    sx:json <1val1dotMinusliteral3.json> ;
+    sx:ttl <1val1dotMinusliteral3.ttl> ;
+    .
+
+<#1val1dotMinusliteralStem3> a sht:RepresentationTest ;
+    mf:name "1val1dotMinusliteralStem3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1dotMinusliteralStem3.shex> ;
+    sx:json <1val1dotMinusliteralStem3.json> ;
+    sx:ttl <1val1dotMinusliteralStem3.ttl> ;
+    .
+
+<#1val1literalStem> a sht:RepresentationTest ;
+    mf:name "1val1literalStem" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1literalStem.shex> ;
+    sx:json <1val1literalStem.json> ;
+    sx:ttl <1val1literalStem.ttl> ;
+    .
+
+<#1val1literalStemMinusliteral3> a sht:RepresentationTest ;
+    mf:name "1val1literalStemMinusliteral3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1literalStemMinusliteral3.shex> ;
+    sx:json <1val1literalStemMinusliteral3.json> ;
+    sx:ttl <1val1literalStemMinusliteral3.ttl> ;
+    .
+
+<#1val1literalStemMinusliteralStem3> a sht:RepresentationTest ;
+    mf:name "1val1literalStemMinusliteralStem3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1literalStemMinusliteralStem3.shex> ;
+    sx:json <1val1literalStemMinusliteralStem3.json> ;
+    sx:ttl <1val1literalStemMinusliteralStem3.ttl> ;
+    .
+
+<#1val1literaliriStem> a sht:RepresentationTest ;
+    mf:name "1val1literaliriStem" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1literaliriStem.shex> ;
+    sx:json <1val1literaliriStem.json> ;
+    sx:ttl <1val1literaliriStem.ttl> ;
+    .
+
+<#1val1literaliriStemMinusliteraliri3> a sht:RepresentationTest ;
+    mf:name "1val1literaliriStemMinusliteraliri3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1literaliriStemMinusliteraliri3.shex> ;
+    sx:json <1val1literaliriStemMinusliteraliri3.json> ;
+    sx:ttl <1val1literaliriStemMinusliteraliri3.ttl> ;
+    .
+
+<#1val1dotMinuslanguage3> a sht:RepresentationTest ;
+    mf:name "1val1dotMinuslanguage3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1dotMinuslanguage3.shex> ;
+    sx:json <1val1dotMinuslanguage3.json> ;
+    sx:ttl <1val1dotMinuslanguage3.ttl> ;
+    .
+
+<#1val1dotMinuslanguageStem3> a sht:RepresentationTest ;
+    mf:name "1val1dotMinuslanguageStem3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1dotMinuslanguageStem3.shex> ;
+    sx:json <1val1dotMinuslanguageStem3.json> ;
+    sx:ttl <1val1dotMinuslanguageStem3.ttl> ;
+    .
+
+<#1val1languageStem> a sht:RepresentationTest ;
+    mf:name "1val1languageStem" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1languageStem.shex> ;
+    sx:json <1val1languageStem.json> ;
+    sx:ttl <1val1languageStem.ttl> ;
+    .
+
+<#1val1languageStemMinuslanguage3> a sht:RepresentationTest ;
+    mf:name "1val1languageStemMinuslanguage3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1languageStemMinuslanguage3.shex> ;
+    sx:json <1val1languageStemMinuslanguage3.json> ;
+    sx:ttl <1val1languageStemMinuslanguage3.ttl> ;
+    .
+
+<#1val1languageStemMinuslanguageStem3> a sht:RepresentationTest ;
+    mf:name "1val1languageStemMinuslanguageStem3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1languageStemMinuslanguageStem3.shex> ;
+    sx:json <1val1languageStemMinuslanguageStem3.json> ;
+    sx:ttl <1val1languageStemMinuslanguageStem3.ttl> ;
+    .
+
+<#1val1literallanguageStem> a sht:RepresentationTest ;
+    mf:name "1val1literallanguageStem" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1literallanguageStem.shex> ;
+    sx:json <1val1literallanguageStem.json> ;
+    sx:ttl <1val1literallanguageStem.ttl> ;
+    .
+
+<#1val1literallanguageStemMinusliterallanguage3> a sht:RepresentationTest ;
+    mf:name "1val1literallanguageStemMinusliterallanguage3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1literallanguageStemMinusliterallanguage3.shex> ;
+    sx:json <1val1literallanguageStemMinusliterallanguage3.json> ;
+    sx:ttl <1val1literallanguageStemMinusliterallanguage3.ttl> ;
+    .
+
+<#1val1literalAtlanguageStem> a sht:RepresentationTest ;
+    mf:name "1val1literalAtlanguageStem" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1literalAtlanguageStem.shex> ;
+    sx:json <1val1literalAtlanguageStem.json> ;
+    sx:ttl <1val1literalAtlanguageStem.ttl> ;
+    .
+
+<#1val1literalAtlanguageStemMinusliteralAtlanguage3> a sht:RepresentationTest ;
+    mf:name "1val1literalAtlanguageStemMinusliteralAtlanguage3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1literalAtlanguageStemMinusliteralAtlanguage3.shex> ;
+    sx:json <1val1literalAtlanguageStemMinusliteralAtlanguage3.json> ;
+    sx:ttl <1val1literalAtlanguageStemMinusliteralAtlanguage3.ttl> ;
     .
 
 <#2dot> a sht:RepresentationTest ;
@@ -2702,22 +2991,6 @@
     sx:ttl <shapeExternRef.ttl> ;
     .
 
-# <#1dotPlusLt1dotPlus> a sht:RepresentationTest ;
-#     mf:name "1dotPlusLt1dotPlus" ;
-#     mf:status mf:proposed ;
-#     sx:shex <1dotPlusLt1dotPlus.shex> ;
-#     sx:json <1dotPlusLt1dotPlus.json> ;
-#     sx:ttl <1dotPlusLt1dotPlus.ttl> ;
-#     .
-
-<#2dot> a sht:RepresentationTest ;
-    mf:name "2dot" ;
-    mf:status mf:proposed ;
-    sx:shex <2dot.shex> ;
-    sx:json <2dot.json> ;
-    sx:ttl <2dot.ttl> ;
-    .
-
 # <#0Inherit1> a sht:RepresentationTest ;
 #     mf:name "0Inherit1" ;
 #     mf:status mf:proposed ;
@@ -2815,6 +3088,14 @@
     sx:ttl <startSelfRefbnode.ttl> ;
     .
 
+<#datatypes> a sht:RepresentationTest ;
+    mf:name "datatypes" ;
+    mf:status mf:proposed ;
+    sx:shex <datatypes.shex> ;
+    sx:json <datatypes.json> ;
+    sx:ttl <datatypes.ttl> ;
+    .
+
 <#_all> a sht:RepresentationTest ;
     mf:name "_all" ;
     mf:status mf:proposed ;
@@ -2829,4 +3110,28 @@
     sx:shex <kitchenSink.shex> ;
     sx:json <kitchenSink.json> ;
     sx:ttl <kitchenSink.ttl> ;
+    .
+
+<#node_kind_example> a sht:RepresentationTest ;
+    mf:name "node_kind_example" ;
+    mf:status mf:proposed ;
+    sx:shex <node_kind_example.shex> ;
+    sx:json <node_kind_example.json> ;
+    sx:ttl <node_kind_example.ttl> ;
+    .
+
+<#dependent_shape> a sht:RepresentationTest ;
+    mf:name "dependent_shape" ;
+    mf:status mf:proposed ;
+    sx:shex <dependent_shape.shex> ;
+    sx:json <dependent_shape.json> ;
+    sx:ttl <dependent_shape.ttl> ;
+    .
+
+<#recursion_example> a sht:RepresentationTest ;
+    mf:name "recursion_example" ;
+    mf:status mf:proposed ;
+    sx:shex <recursion_example.shex> ;
+    sx:json <recursion_example.json> ;
+    sx:ttl <recursion_example.ttl> ;
     .
